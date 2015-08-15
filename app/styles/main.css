@@ -1,0 +1,47 @@
+/*form input.ng-invalid.ng-dirty {
+    background-color: #ffcbc1;
+}
+
+form input.ng-invalid:focus {
+    outline-color: red;
+}
+
+form input.ng-valid.ng-dirty {
+    background-color: #1dca07;
+}*/
+
+.form-group.has-error input {
+    background-color: #ffcbc1;
+}
+
+div.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+}
+
+div.overlay .dialog {
+    margin-top: 150px;
+    width: 400px;
+    border: solid #000 1px;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+div.overlay .dialog .title {
+    background-color: gold;
+}
+
+div.overlay .dialog .content {
+    background-color: cornsilk;
+}
+
+.action-button {
+    width: 198px;
+}
