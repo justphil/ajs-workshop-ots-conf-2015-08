@@ -1,0 +1,16 @@
+<input type="text" ng-model="searchText">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="book in books | orderBy:'-title' | filter:{'title':searchText}">
+            <td><a ng-href="#/books/{{ book.isbn }}">{{ book.title }}</a></td>
+            <td>{{ book.isbn }}</td>
+        </tr>
+    </tbody>
+</table>
