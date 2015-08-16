@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module('otsConfApp', []);
+angular.module('otsConfApp', ['ngRoute']);

@@ -11,19 +11,21 @@
   -->
 
 </head>
-<body ng-controller="ColorPickerCtrl">
+<body>
 
-  <ots-color-picker init-r="colorR" init-g="colorG" init-b="colorB"
-                    on-color-change-fn="onColorChange(red, green, blue)"></ots-color-picker>
+  <div class="container" ng-view>
+  </div>
 
 
   <!-- 3rd-Party Libs -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
 
   <!-- Application Files -->
   <script src="scripts/app.js"></script>
   <script src="scripts/directives/otsColorPicker.js"></script>
   <script src="scripts/controllers/ColorPickerCtrl.js"></script>
+  <script src="scripts/_configs/routeConfig.js"></script>
 
 </body>
 </html>

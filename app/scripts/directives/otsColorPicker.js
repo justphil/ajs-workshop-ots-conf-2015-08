@@ -14,8 +14,11 @@ angular.module('otsConfApp').directive('otsColorPicker', function() {
         },
         link: function(scope) {
             console.log('otsColorPicker created!');
-            scope.updateFn({
-                red: 123, green: 111, blue: 222
+
+            scope.$watch('[r, g, b]', function() {
+                scope.updateFn({
+                    red: scope.r, green: scope.g, blue: scope.b
+                });
             });
         }
     };
