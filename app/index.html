@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <meta charset="utf-8">
   <title>myApp</title>
@@ -11,9 +11,18 @@
   -->
 
 </head>
-<body>
+<body ng-init="r=0; g=255; b=0;">
 
-  <h1>Hello World!</h1>
+  <input type="range" min="0" max="255" ng-model="r">
+  <input type="range" min="0" max="255" ng-model="g">
+  <input type="range" min="0" max="255" ng-model="b">
+
+  <div style="height: 50px;
+              background-color: rgb({{r}}, {{g}}, {{b}});"></div>
+
+  R: {{r}}<br>
+  G: {{g}}<br>
+  B: {{b}}
 
   <!-- 3rd-Party Libs -->
   <script src="bower_components/angular/angular.js"></script>
