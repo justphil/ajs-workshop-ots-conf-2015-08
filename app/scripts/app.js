@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module('ajsApp', []);
+angular.module('otsConfApp', []);
