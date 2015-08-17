@@ -1,3 +1,7 @@
 angular.module('otsConfApp').controller('BookListCtrl', function($scope, bookDataService) {
-    $scope.books = bookDataService.getAllBooks();
+    bookDataService.getAllBooks().then(function(response) {
+        $scope.books = response.data;
+    }).catch(function(error) {
+        console.log('error occurred', error);
+    });
 });

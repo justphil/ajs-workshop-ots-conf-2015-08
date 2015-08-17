@@ -29,6 +29,19 @@ describe('Service bookDataService', function() {
         });
     });
 
+    describe('getBookByIsbn()', function() {
+        it('should be a defined API function', function() {
+            expect(bookDataService.getBookByIsbn).toEqual(jasmine.any(Function));
+        });
+
+        it('should return the appropriate book object', function() {
+            var isbn = '111-111-111';
+            var actual = bookDataService.getBookByIsbn(isbn);
+            expect(isValidBook(actual)).toBe(true);
+            expect(actual.isbn).toBe(isbn);
+        });
+    });
+
     function isValidBook(book) {
         return angular.isDefined(book)
                 && angular.isString(book.title)

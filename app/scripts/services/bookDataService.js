@@ -1,4 +1,4 @@
-angular.module('otsConfApp').factory('bookDataService', function() {
+angular.module('otsConfApp').factory('bookDataService', function($q, $http) {
 
     // private state
     var _books = [
@@ -24,11 +24,28 @@ angular.module('otsConfApp').factory('bookDataService', function() {
 
     // private impl.
     function getAllBooks() {
-        return angular.copy(_books);
+        return $http.get('http://ajs-workshop.herokuapp.com/api/books');
+
+        /*return $q.when({
+            data: angular.copy(_books)
+        });*/
+    }
+
+    function getBookByIsbn(isbn) {
+        var filtered = _books.filter(function(book) {
+            return isbn === book.isbn;
+        });
+
+        if (filtered.length > 0) {
+            return filtered[0];
+        } else {
+            return null;
+        }
     }
 
     // revealing module
     return {
-        getAllBooks: getAllBooks
+        getAllBooks: getAllBooks,
+        getBookByIsbn: getBookByIsbn
     };
 });
